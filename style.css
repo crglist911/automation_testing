@@ -1,0 +1,88 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+#periodic-table-container {
+    display: grid;
+    grid-template-columns: repeat(18, 50px); /* Adjust column count and width as needed */
+    grid-gap: 5px;
+    justify-content: center;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.element {
+    width: 50px;
+    height: 50px;
+    border: 1px solid #ccc;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 10px;
+    background-color: #f9f9f9;
+    box-sizing: border-box; /* Ensures padding and border don't increase size */
+}
+
+.element:hover {
+    background-color: #e0e0e0;
+    border-color: #aaa;
+}
+
+.element .symbol {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.element .atomic-number {
+    font-size: 8px;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+}
+
+.element .name {
+    font-size: 8px;
+    text-align: center;
+    margin-top: 2px;
+}
+
+#element-details-container {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+#element-details-container h2 {
+    margin-top: 0;
+    color: #333;
+}
+
+/* Placeholder for different element types - will be expanded later */
+.alkali-metal { background-color: #ffdead; }
+.alkaline-earth-metal { background-color: #ffe4b5; }
+.lanthanide { background-color: #d8bfd8; }
+.actinide { background-color: #dda0dd; }
+.transition-metal { background-color: #b0e0e6; }
+.post-transition-metal { background-color: #d3d3d3; }
+.metalloid { background-color: #90ee90; }
+.nonmetal { background-color: #add8e6; }
+.halogen { background-color: #fafad2; }
+.noble-gas { background-color: #ffebcd; }
+.unknown { background-color: #f5f5f5; }

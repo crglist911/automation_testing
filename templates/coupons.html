@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coupon Data</title>
+</head>
+<body>
+    <h1>Coupon Data</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Code</th>
+                <th>Discount Percentage</th>
+                <th>Month</th>
+                <th>Year</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for coupon in coupons %}
+            <tr>
+                <td>{{ coupon['code'] }}</td>
+                <td>{{ "%.2f"|format(coupon['discount_percentage'] * 100) }}%</td>
+                <td>{{ coupon['month'] }}</td>
+                <td>{{ coupon['year'] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

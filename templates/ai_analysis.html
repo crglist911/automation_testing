@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generative AI Analysis</title>
+</head>
+<body>
+    <h1>Generative AI Analysis</h1>
+    <p>Ask a question about the store's data in natural language.</p>
+    <form action="/ai_analysis" method="post">
+        <input type="text" name="question" size="50">
+        <button type="submit">Ask</button>
+    </form>
+
+    {% if question %}
+        <h2>Your Question:</h2>
+        <p>{{ question }}</p>
+    {% endif %}
+
+    {% if results %}
+        <h2>Results:</h2>
+        <table>
+            <thead>
+                <tr>
+                    {% for header in headers %}
+                        <th>{{ header }}</th>
+                    {% endfor %}
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in results %}
+                <tr>
+                    {% for item in row %}
+                        <td>{{ item }}</td>
+                    {% endfor %}
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% elif error %}
+        <p style="color: red;">{{ error }}</p>
+    {% endif %}
+</body>
+</html>
